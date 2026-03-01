@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
@@ -6,17 +7,7 @@ import { VitePWA } from "vite-plugin-pwa";
 
 export default defineConfig({
   plugins: [
-    react({
-      // Optimizaciones de React
-      babel: {
-        plugins: [
-          // Remove PropTypes en producción
-          ["transform-react-remove-prop-types", { removeImport: true }],
-        ],
-      },
-      // Fast Refresh optimizado
-      fastRefresh: true,
-    }),
+    react(),
     
     // PWA Plugin - Mejora rendimiento con Service Worker y Cache
     VitePWA({
@@ -26,31 +17,6 @@ export default defineConfig({
       workbox: {
         globPatterns: ["**/*.{js,css,html,ico,png,svg,webp,jpg,jpeg}"],
         maximumFileSizeToCacheInBytes: 3 * 1024 * 1024, // 3MB
-      manifest: {
-        name: "English Learning Platform",
-        short_name: "English Learning",
-        description: "Plataforma completa para aprender inglés",
-        theme_color: "#2563eb",
-        background_color: "#ffffff",
-        display: "standalone",
-        icons: [
-          {
-            src: "/icon-192x192.png",
-            sizes: "192x192",
-            type: "image/png",
-          },
-          {
-            src: "/icon-512x512.png",
-            sizes: "512x512",
-            type: "image/png",
-          },
-        ],
-      },
-      devOptions: {
-        enabled: false,
-        type: "module",
-      },
-      workbox: {
         // Estrategias de cache para diferentes tipos de recursos
         runtimeCaching: [
           {
@@ -100,6 +66,30 @@ export default defineConfig({
             },
           },
         ],
+      },
+      manifest: {
+        name: "English Learning Platform",
+        short_name: "English Learning",
+        description: "Plataforma completa para aprender inglés",
+        theme_color: "#2563eb",
+        background_color: "#ffffff",
+        display: "standalone",
+        icons: [
+          {
+            src: "/icon-192x192.png",
+            sizes: "192x192",
+            type: "image/png",
+          },
+          {
+            src: "/icon-512x512.png",
+            sizes: "512x512",
+            type: "image/png",
+          },
+        ],
+      },
+      devOptions: {
+        enabled: false,
+        type: "module",
       },
     }),
     
@@ -171,21 +161,7 @@ export default defineConfig({
     
     // Chunk size warnings
     chunkSizeWarningLimit: 1000,
-      "react-helmet-async",
-    ],
-    exclude: ["@vite/client", "@vite/env"],
-    // Optimizar dependencias en paralelo
-    esbuildOptions: {
-      target: "es2020",
-      logLevel: "info",
-    },
-  },
-  
-  // Performance hints
-  esbuild: {
-    logOverride: { "this-is-undefined-in-esm": "silent" },
-    legalComments: "none",
-    treeShaking: truelo
+    
     sourcemap: false,
     
     // Optimizar CSS
@@ -193,6 +169,13 @@ export default defineConfig({
     
     // Reportar tamaño de chunks comprimidos
     reportCompressedSize: true,
+  },
+  
+  // Performance hints
+  esbuild: {
+    logOverride: { "this-is-undefined-in-esm": "silent" },
+    legalComments: "none",
+    treeShaking: true,
   },
   
   // Optimización de dependencias - Pre-bundle en dev

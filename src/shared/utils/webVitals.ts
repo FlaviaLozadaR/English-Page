@@ -187,22 +187,3 @@ export function observeLongTasks(callback: (entry: PerformanceEntry) => void) {
   }
   return null;
 }
-      // Enviar a Google Analytics, si está configurado
-      if (typeof window !== 'undefined' && (window as any).gtag) {
-        (window as any).gtag('event', metric.name, {
-          value: Math.round(metric.value),
-          metric_rating: metric.rating,
-          metric_delta: Math.round(metric.delta),
-          metric_value: Math.round(metric.value),
-        });
-      }
-      
-      // O enviar a tu propio endpoint de analytics
-      // fetch('/api/analytics', {
-      //   method: 'POST',
-      //   body: JSON.stringify(metric),
-      //   headers: { 'Content-Type': 'application/json' }
-      // });
-    });
-  }
-}

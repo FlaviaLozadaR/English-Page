@@ -2633,5 +2633,6 @@ export function Practice() {
         </div>
       )}
     </div>
+    </>
   );
 }
