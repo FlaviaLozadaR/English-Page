@@ -5,6 +5,7 @@ import {
   Briefcase, Coffee, BookOpen, CheckCircle, XCircle, ArrowRight,
   TrendingUp, Link as LinkIcon, Layers, MapPin, BarChart, HelpCircle, List
 } from "lucide-react";
+import { SEO } from "../shared/components/SEO";
 
 interface Question {
   id: number;
@@ -1983,7 +1984,32 @@ export function Practice() {
   };
 
   return (
-    <div className="space-y-4 sm:space-y-6">
+    <>
+      <SEO 
+        title="Práctica de Inglés Interactiva - +2000 Ejercicios Gratis por Nivel 2026"
+        description="Mejora tu inglés con +2000 ejercicios interactivos organizados por categoría y nivel. Práctica gramática, vocabulario, phrasal verbs, preposiciones y más. Feedback instantáneo y explicaciones detalladas. Ideal para preparar exámenes."
+        keywords="práctica inglés, ejercicios inglés online, english practice, grammar exercises, phrasal verbs, preposiciones inglés, conjunciones inglés, ejercicios interactivos inglés, práctica gramática inglesa"
+        canonical="https://english-learning-platform.com/practice"
+        breadcrumbs={[
+          { name: 'Inicio', url: 'https://english-learning-platform.com/' },
+          { name: 'Práctica', url: 'https://english-learning-platform.com/practice' }
+        ]}
+        faq={[
+          {
+            question: '¿Cuántos ejercicios de práctica hay disponibles?',
+            answer: 'Tenemos más de 2000 ejercicios interactivos organizados en múltiples categorías: partes de la oración, tiempos verbales, preposiciones, phrasal verbs, condicionales, y mucho más. Todos con feedback instantáneo.'
+          },
+          {
+            question: '¿Los ejercicios se adaptan a mi nivel?',
+            answer: 'Sí, cada categoría tiene ejercicios para diferentes niveles: básico, intermedio y avanzado. Puedes elegir el nivel que mejor se adapte a ti y progresar gradualmente.'
+          },
+          {
+            question: '¿Puedo ver las explicaciones de las respuestas?',
+            answer: 'Absolutamente. Cada ejercicio incluye explicaciones detalladas que te ayudan a entender por qué una respuesta es correcta o incorrecta, facilitando el aprendizaje.'
+          }
+        ]}
+      />
+      <div className="space-y-4 sm:space-y-6">
       {/* Header */}
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
         <div className="flex items-start gap-3">

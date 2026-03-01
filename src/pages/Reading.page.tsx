@@ -33,10 +33,33 @@ export function ReadingPage() {
   // SEO Meta Tags
   const seoComponent = (
     <SEO 
-      title="Reading Comprehension - Mejora tu Lectura en Inglés | English Learning"
-      description="Practica reading comprehension en inglés con textos adaptados a tu nivel. Ejercicios interactivos de lectura con preguntas para mejorar tu comprensión lectora."
-      keywords="reading comprehension, comprensión lectora inglés, textos en inglés, leer en inglés, ejercicios de lectura, practice reading"
+      title="Reading Comprehension en Inglés - Textos y Ejercicios por Nivel 2026"
+      description="Mejora tu comprensión lectora en inglés con +50 textos organizados por nivel (básico, intermedio, avanzado). Ejercicios interactivos con respuestas instantáneas. Practica reading comprehension gratis y mejora tu nivel de inglés."
+      keywords="reading comprehension, comprensión lectora inglés, textos en inglés, leer en inglés, ejercicios de lectura, practice reading, lectura en inglés, english reading practice, textos inglés nivel, reading exercises"
       canonical="https://english-learning-platform.com/reading"
+      breadcrumbs={[
+        { name: 'Inicio', url: 'https://english-learning-platform.com/' },
+        { name: 'Reading', url: 'https://english-learning-platform.com/reading' }
+      ]}
+      course={{
+        name: 'Reading Comprehension - Comprensión Lectora en Inglés',
+        description: 'Curso completo de reading comprehension con textos adaptados a todos los niveles. Mejora tu comprensión lectora con ejercicios y evaluaciones.',
+        provider: 'English Learning Platform'
+      }}
+      faq={[
+        {
+          question: '¿Cómo puedo mejorar mi reading comprehension?',
+          answer: 'Lee textos diariamente empezando con tu nivel actual. Practica con nuestros ejercicios interactivos, aumenta gradualmente la dificultad y verifica tus respuestas para identificar áreas de mejora.'
+        },
+        {
+          question: '¿Cuántos textos hay disponibles?',
+          answer: 'Tenemos más de 50 textos de reading comprehension organizados en tres niveles: básico, intermedio y avanzado, con nuevos textos agregados regularmente.'
+        },
+        {
+          question: '¿Las preguntas tienen respuestas explicadas?',
+          answer: 'Sí, cada pregunta incluye retroalimentación inmediata para ayudarte a entender por qué una respuesta es correcta o incorrecta.'
+        }
+      ]}
     />
   );
   const [selectedLevel, setSelectedLevel] = useState("Todos");

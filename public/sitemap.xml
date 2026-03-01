@@ -1,55 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   
-  <!-- Home Page -->
+  <!-- Home Page - Highest Priority -->
   <url>
     <loc>https://english-learning-platform.com/</loc>
-    <lastmod>2026-02-27</lastmod>
+    <lastmod>2026-03-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://english-learning-platform.com/og-image.jpg</image:loc>
+      <image:title>English Learning Platform - Aprende Inglés Online</image:title>
+      <image:caption>Plataforma completa para aprender inglés gratis</image:caption>
+    </image:image>
   </url>
   
   <!-- Reading Comprehension -->
   <url>
     <loc>https://english-learning-platform.com/reading</loc>
-    <lastmod>2026-02-27</lastmod>
+    <lastmod>2026-03-01</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://english-learning-platform.com/images/reading-og.jpg</image:loc>
+      <image:title>Reading Comprehension - Ejercicios de Lectura</image:title>
+    </image:image>
   </url>
   
   <!-- Vocabulary -->
   <url>
     <loc>https://english-learning-platform.com/vocabulary</loc>
-    <lastmod>2026-02-27</lastmod>
+    <lastmod>2026-03-01</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://english-learning-platform.com/images/vocabulary-og.jpg</image:loc>
+      <image:title>Vocabulario en Inglés - Verbos Irregulares</image:title>
+    </image:image>
   </url>
   
   <!-- Grammar -->
   <url>
     <loc>https://english-learning-platform.com/grammar</loc>
-    <lastmod>2026-02-27</lastmod>
+    <lastmod>2026-03-01</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://english-learning-platform.com/images/grammar-og.jpg</image:loc>
+      <image:title>Gramática Inglesa - Todos los Tiempos Verbales</image:title>
+    </image:image>
   </url>
   
   <!-- Practice -->
   <url>
     <loc>https://english-learning-platform.com/practice</loc>
-    <lastmod>2026-02-27</lastmod>
+    <lastmod>2026-03-01</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://english-learning-platform.com/images/practice-og.jpg</image:loc>
+      <image:title>Práctica de Inglés - Ejercicios Interactivos</image:title>
+    </image:image>
   </url>
   
   <!-- Quiz -->
   <url>
     <loc>https://english-learning-platform.com/quiz</loc>
-    <lastmod>2026-02-27</lastmod>
+    <lastmod>2026-03-01</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://english-learning-platform.com/images/quiz-og.jpg</image:loc>
+      <image:title>Quiz de Inglés - Evalúa tu Nivel</image:title>
+    </image:image>
+  </url>
+  
+  <!-- Additional high-value pages -->
+  <url>
+    <loc>https://english-learning-platform.com/about</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  
+  <url>
+    <loc>https://english-learning-platform.com/contact</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  
+  <!-- Blog/Resources Section (if exists) -->
+  <url>
+    <loc>https://english-learning-platform.com/blog</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   
 </urlset>

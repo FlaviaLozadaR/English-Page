@@ -6,12 +6,26 @@ import { VitePWA } from "vite-plugin-pwa";
 
 export default defineConfig({
   plugins: [
-    react(),
+    react({
+      // Optimizaciones de React
+      babel: {
+        plugins: [
+          // Remove PropTypes en producción
+          ["transform-react-remove-prop-types", { removeImport: true }],
+        ],
+      },
+      // Fast Refresh optimizado
+      fastRefresh: true,
+    }),
     
     // PWA Plugin - Mejora rendimiento con Service Worker y Cache
     VitePWA({
       registerType: "autoUpdate",
       includeAssets: ["favicon.svg", "robots.txt", "apple-touch-icon.png"],
+      // Estrategia de actualización
+      workbox: {
+        globPatterns: ["**/*.{js,css,html,ico,png,svg,webp,jpg,jpeg}"],
+        maximumFileSizeToCacheInBytes: 3 * 1024 * 1024, // 3MB
       manifest: {
         name: "English Learning Platform",
         short_name: "English Learning",
@@ -32,9 +46,27 @@ export default defineConfig({
           },
         ],
       },
+      devOptions: {
+        enabled: false,
+        type: "module",
+      },
       workbox: {
         // Estrategias de cache para diferentes tipos de recursos
         runtimeCaching: [
+          {
+            urlPattern: /^https:\/\/fonts\.gstatic\.com\/.*/i,
+            handler: "CacheFirst",
+            options: {
+              cacheName: "google-fonts-webfonts",
+              expiration: {
+                maxEntries: 10,
+                maxAgeSeconds: 60 * 60 * 24 * 365, // 1 año
+              },
+              cacheableResponse: {
+                statuses: [0, 200],
+              },
+            },
+          },
           {
             urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
             handler: "CacheFirst",
@@ -139,8 +171,21 @@ export default defineConfig({
     
     // Chunk size warnings
     chunkSizeWarningLimit: 1000,
-    
-    // Generar sourcemaps solo en desarrollo
+      "react-helmet-async",
+    ],
+    exclude: ["@vite/client", "@vite/env"],
+    // Optimizar dependencias en paralelo
+    esbuildOptions: {
+      target: "es2020",
+      logLevel: "info",
+    },
+  },
+  
+  // Performance hints
+  esbuild: {
+    logOverride: { "this-is-undefined-in-esm": "silent" },
+    legalComments: "none",
+    treeShaking: truelo
     sourcemap: false,
     
     // Optimizar CSS

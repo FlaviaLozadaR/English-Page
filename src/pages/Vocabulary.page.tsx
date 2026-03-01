@@ -27,10 +27,33 @@ export function VocabularyPage() {
   // SEO Meta Tags
   const seoComponent = (
     <SEO 
-      title="Vocabulario en Inglés - Verbos Irregulares y Más | English Learning"
-      description="Aprende y practica vocabulario en inglés. Lista completa de verbos irregulares, verbos regulares y vocabulario esencial con ejemplos prácticos."
-      keywords="vocabulario inglés, verbos irregulares inglés, irregular verbs, verbos regulares, english vocabulary, aprender palabras inglés"
+      title="Vocabulario en Inglés - 500+ Verbos Irregulares y Palabras Esenciales 2026"
+      description="Lista completa de verbos irregulares en inglés con ejemplos prácticos. Más de 500 palabras esenciales organizadas por categoría. Aprende present, past y past participle con traducción y ejemplos de uso. Guía definitiva de vocabulario inglés."
+      keywords="vocabulario inglés, verbos irregulares inglés, irregular verbs, verbos regulares, english vocabulary, aprender palabras inglés, past participle, lista verbos irregulares, vocabulario esencial inglés"
       canonical="https://english-learning-platform.com/vocabulary"
+      breadcrumbs={[
+        { name: 'Inicio', url: 'https://english-learning-platform.com/' },
+        { name: 'Vocabulario', url: 'https://english-learning-platform.com/vocabulary' }
+      ]}
+      course={{
+        name: 'Vocabulario en Inglés - Verbos Irregulares y Palabras Esenciales',
+        description: 'Curso completo de vocabulario en inglés con verbos irregulares, regulares y palabras esenciales organizadas por categoría.',
+        provider: 'English Learning Platform'
+      }}
+      faq={[
+        {
+          question: '¿Cuántos verbos irregulares hay en inglés?',
+          answer: 'Existen aproximadamente 200 verbos irregulares en inglés de uso común. Nuestra plataforma incluye más de 150 verbos irregulares esenciales con ejemplos de uso y traducción al español.'
+        },
+        {
+          question: '¿Cómo memorizar los verbos irregulares?',
+          answer: 'La mejor forma es practicar con ejemplos en contexto. Usa nuestra plataforma diariamente, agrupa verbos por similitudes y practica escribiendo oraciones. La repetición espaciada es clave.'
+        },
+        {
+          question: '¿Cuál es la diferencia entre past simple y past participle?',
+          answer: 'El past simple se usa para acciones pasadas (I went), mientras que el past participle se usa con los tiempos perfectos y la voz pasiva (I have gone, It was done).'
+        }
+      ]}
     />
   );
 

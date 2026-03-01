@@ -1,26 +1,78 @@
 # Robots.txt for English Learning Platform
-# Allow all web crawlers
+# Optimized for SEO and search engine crawling
 
+# Allow all major search engines
 User-agent: *
 Allow: /
-
-# Disallow admin or private areas (if any)
 Disallow: /admin/
 Disallow: /api/
 Disallow: /private/
+Disallow: /*.json$
+Disallow: /*?*utm_*
 
-# Sitemap location
+# Sitemap location (IMPORTANT for SEO)
 Sitemap: https://english-learning-platform.com/sitemap.xml
 
-# Crawl delay (optional, in seconds)
-Crawl-delay: 1
+# Crawl-delay to be respectful to server resources
+# Removed or set to 0 for major search engines to crawl faster
+Crawl-delay: 0
 
-# Specific bot instructions
+# Google-specific rules (prioritize important pages)
 User-agent: Googlebot
 Allow: /
+Disallow: /admin/
+Disallow: /api/
+Crawl-delay: 0
 
+# Google Image Bot
+User-agent: Googlebot-Image
+Allow: /
+Disallow: /admin/
+
+# Bing Bot
 User-agent: Bingbot
 Allow: /
+Disallow: /admin/
+Disallow: /api/
+Crawl-delay: 0
 
+# Yahoo Bot
 User-agent: Slurp
 Allow: /
+Crawl-delay: 0
+
+# Baidu (Chinese search engine)
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 1
+
+# Yandex (Russian search engine)
+User-agent: Yandex
+Allow: /
+Crawl-delay: 1
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+# Social Media Crawlers (allow for rich previews)
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# Host declaration (optional, helps with canonical specification)
+# Host: english-learning-platform.com

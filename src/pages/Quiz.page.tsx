@@ -22,10 +22,28 @@ export function QuizPage() {
   // SEO Meta Tags
   const seoComponent = (
     <SEO 
-      title="Quiz de Inglés - Pon a Prueba tu Nivel | English Learning"
-      description="Evalúa tu nivel de inglés con nuestros quizzes interactivos. Tests de gramática, vocabulario y comprensión para diferentes niveles: A1, A2, B1, B2, C1."
-      keywords="quiz inglés, test de inglés, examen inglés online, nivel de inglés, english quiz, grammar test, vocabulary test"
+      title="Quiz de Inglés Online - Test Completo por Niveles A1-C2 | Gratis 2026"
+      description="Evalúa tu nivel de inglés GRATIS con nuestros quizzes interactivos profesionales. +200 preguntas de gramática, vocabulario y comprensión organizadas por nivel (A1, A2, B1, B2, C1, C2). Resultados instantáneos con explicaciones detalladas."
+      keywords="quiz inglés, test de inglés, examen inglés online, nivel de inglés, english quiz, grammar test, vocabulary test, test nivel inglés, quiz ingles gratis, examen inglés nivel"
       canonical="https://english-learning-platform.com/quiz"
+      breadcrumbs={[
+        { name: 'Inicio', url: 'https://english-learning-platform.com/' },
+        { name: 'Quiz', url: 'https://english-learning-platform.com/quiz' }
+      ]}
+      faq={[
+        {
+          question: '¿Cómo sé mi nivel de inglés?',
+          answer: 'Completa nuestro quiz de evaluación que incluye preguntas de gramática, vocabulario y comprensión. Al finalizar recibirás tu nivel según el Marco Común Europeo (A1-C2) con retroalimentación detallada.'
+        },
+        {
+          question: '¿Cuántas preguntas tiene el quiz?',
+          answer: 'El quiz completo contiene entre 20-50 preguntas dependiendo de tu progreso. Las preguntas se adaptan a tu nivel conforme avanzas para una evaluación precisa.'
+        },
+        {
+          question: '¿Puedo repetir el quiz?',
+          answer: 'Sí, puedes realizar el quiz cuantas veces quieras para medir tu progreso. Recomendamos esperar al menos 2-3 semanas entre evaluaciones para ver mejoras significativas.'
+        }
+      ]}
     />
   );
 

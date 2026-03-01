@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FileText, ChevronDown, ChevronUp, Search } from "lucide-react";
+import { SEO } from "../shared/components/SEO";
 
 interface GrammarTopic {
   id: number;
@@ -14,6 +15,39 @@ export function Grammar() {
   const [expandedTopic, setExpandedTopic] = useState<number | null>(null);
   const [selectedCategory, setSelectedCategory] = useState("Todos");
   const [searchTerm, setSearchTerm] = useState("");
+
+  // SEO Component
+  const seoComponent = (
+    <SEO 
+      title="Gramática Inglesa - Guía Completa de Tiempos Verbales y Reglas 2026"
+      description="Aprende gramática inglesa con explicaciones claras y ejemplos prácticos. Guía completa de todos los tiempos verbales, condicionales, voz pasiva y más. +100 temas de gramática con ejercicios interactivos."
+      keywords="gramática inglesa, tiempos verbales inglés, present simple, past simple, present perfect, english grammar, reglas gramaticales, condicionales inglés, voz pasiva, modales inglés"
+      canonical="https://english-learning-platform.com/grammar"
+      breadcrumbs={[
+        { name: 'Inicio', url: 'https://english-learning-platform.com/' },
+        { name: 'Gramática', url: 'https://english-learning-platform.com/grammar' }
+      ]}
+      course={{
+        name: 'Gramática Inglesa - Curso Completo',
+        description: 'Curso completo de gramática inglesa desde nivel básico hasta avanzado. Aprende todos los tiempos verbales, condicionales, voz pasiva y estructura de oraciones.',
+        provider: 'English Learning Platform'
+      }}
+      faq={[
+        {
+          question: '¿Cuántos tiempos verbales hay en inglés?',
+          answer: 'Hay 12 tiempos verbales principales en inglés: present simple, present continuous, present perfect, present perfect continuous, past simple, past continuous, past perfect, past perfect continuous, future simple, future continuous, future perfect, y future perfect continuous.'
+        },
+        {
+          question: '¿Cuál es el tiempo verbal más importante?',
+          answer: 'El present simple y el past simple son los más importantes para comenzar. Sin embargo, el present perfect es esencial para conversaciones naturales en inglés.'
+        },
+        {
+          question: '¿Cómo puedo mejorar mi gramática en inglés?',
+          answer: 'Practica regularmente con ejercicios, lee textos en inglés para ver la gramática en contexto, y escribe oraciones propias aplicando las reglas aprendidas. La consistencia es fundamental.'
+        }
+      ]}
+    />
+  );
 
   const topics: GrammarTopic[] = [
     // TIEMPOS VERBALES - PRESENTE
